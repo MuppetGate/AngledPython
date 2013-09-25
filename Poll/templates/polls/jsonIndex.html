@@ -14,6 +14,31 @@
 
         {% verbatim %}
         {{ greetings }}
+
+        <input type="text" ng-model="inputValue"/>
+        {{ inputValue }}
+
+        <br/>
+
+        <select ng-model="selectedPerson" ng-options="person.name for person in people"></select>
+
+        <select ng-model="selectedGenre">
+            <option ng-repeat='label in people[selectedPerson.id].music'>{{label}}</option>
+        </select>
+
+        <br/>
+
+        <input type='text' ng-model='searchText' />
+        <ul>
+            <li ng-repeat='person in people | filter:searchText'>#{{person.id}} {{person.name}}</li>
+        </ul>
+
+        <br/>
+
+        <ul>
+            <li ng-repeat='person in people ' ng-show="person.live == true">#{{person.id}} {{person.name}}</li>
+        </ul>
+
         {% endverbatim %}
 
     </div>
