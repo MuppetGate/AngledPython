@@ -55,4 +55,23 @@ app.controller("MyTutorialController", function($scope){
         }
     ];
 
+    $scope.newPerson = null
+
+    $scope.addNew = function () {
+
+        // Tricky?
+        if ($scope.newPerson != null && $scope.newPerson != "") {
+
+            $scope.people.push({
+
+                id: $scope.people.length,
+                name: $scope.newPerson,
+                music: [],
+                live: true
+            })
+
+        }
+
+    }
+
 });

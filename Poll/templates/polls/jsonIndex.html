@@ -13,6 +13,7 @@
     <div id="content" ng-app="MyTutorialApp" ng-controller="MyTutorialController">
 
         {% verbatim %}
+
         {{ greetings }}
 
         <input type="text" ng-model="inputValue"/>
@@ -38,6 +39,12 @@
         <ul>
             <li ng-repeat='person in people ' ng-show="person.live == true">#{{person.id}} {{person.name}}</li>
         </ul>
+
+        <br/>
+
+        <input type="text" ng-model="newPerson"/>
+
+        <button ng-click='addNew()'>Add</button>
 
         {% endverbatim %}
 
